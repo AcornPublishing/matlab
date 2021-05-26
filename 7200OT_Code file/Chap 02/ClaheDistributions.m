@@ -1,0 +1,10 @@
+img = imread('my_image.bmp');
+img_u = adapthisteq(img);
+img_r = adapthisteq(img,'Distribution','rayleigh');
+img_e = adapthisteq(img,'Distribution','exponential');
+subplot(2,3,1),imshow(img_u),title('Uniform distribution');
+subplot(2,3,2),imshow(img_r),title('Rayleigh distribution');
+subplot(2,3,3),imshow(img_e),title('Exponential distribution');
+subplot(2,3,4),imhist(img_u,64),title('Uniform Histogram');
+subplot(2,3,5),imhist(img_r,64),title('Rayleigh Histogram');
+subplot(2,3,6),imhist(img_e,64),title('ExponentialHistogram');
